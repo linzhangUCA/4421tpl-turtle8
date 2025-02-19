@@ -1,8 +1,9 @@
-# ROS 2 Package
+# Figure 8 Turtlesim
 ## Objectives
-- Create a ROS 2 package.
-- Link a ROS executable to a Python script.
-- Create a publisher **node** for publishing a **topic** with [`String`](https://docs.ros2.org/foxy/api/std_msgs/msg/String.html) **message**.
+- Get familiar with ROS concepts, such as [node](https://docs.ros.org/en/jazzy/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Nodes/Understanding-ROS2-Nodes.html) and 
+[topic](https://docs.ros.org/en/jazzy/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics.html).
+- Manage a ROS [package](https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries/Creating-Your-First-ROS2-Package.html) with an [executable].
+- Practice node execution with topic [publisher and subscriber](https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html).
 
 ## Requirements: 
 1. Create a ROS package with name `r2_pkg` using the CLI.
