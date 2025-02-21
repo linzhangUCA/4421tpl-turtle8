@@ -24,13 +24,13 @@ Clone this repository down to the right location in your ROS workspace.
    
    ![example_fig8](turtlesim_play_pkg/images/example_fig8.png)
 3. Build your package and verify your node's functionality.
-   1. To build your package:
+   1. To build your package, open a terminal and run following commands:
    ```console
    cd <ros workspace path>
    colcon build
    source install/local_setup.bash  # CRITICAL, or ROS can't find your package
    ```   
-   2. Open up a terminal, start `turtlesim_node`
+   2. Start `turtlesim_node` in a terminal
    ```console
    ros2 run turtlesim turtlesim_node
    ```
@@ -41,20 +41,6 @@ Clone this repository down to the right location in your ROS workspace.
 5. Let the turtle complete at least five laps then upload your figure 8 to the [images/](turtlesim_play_pkg/images/) directory.
 6. (5%) Fill the `<description>`, `<maintainer>`, `<maintainer_email>` fields with your own information in [package.xml](turtlesim_play_pkg/package.xml) and [setup.py](turtlesim_play_pkg/setup.py).
 
-3. (20%) Build this package using `colcon`. Refer to this [tutorial](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Creating-Your-First-ROS2-Package.html). 
-> Hint:
-> ```console
-> cd <ros workspace location>/
-> colcon build
-> ```
-
-Verify if the executable python script is recognizable by ROS.
-> Hint:
-> ```console
-> ros2 run <package name> <executable name>
-> ```
-
-4. (10%) Stamp the package with your own signature by editing `package.xml` and `setup.py`. Fill `<maintainer>`, `<maintainer_email>`, `<description>` or any other fields with appropriate information. Refer to this [tutorial](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Creating-Your-First-ROS2-Package.html). 
 
 ## Troubleshooting:
 - Make sure your environment is correctly setup by following this [tutorial](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html)
