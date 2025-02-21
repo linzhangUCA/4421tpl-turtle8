@@ -2,14 +2,29 @@
 ## Objectives
 - Get familiar with ROS concepts, such as [node](https://docs.ros.org/en/jazzy/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Nodes/Understanding-ROS2-Nodes.html) and 
 [topic](https://docs.ros.org/en/jazzy/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics.html).
-- Manage a ROS [package](https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries/Creating-Your-First-ROS2-Package.html) with an [executable].
+- Manage a ROS [package](https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries/Creating-Your-First-ROS2-Package.html) with an [executable](https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html).
 - Practice node execution with topic [publisher and subscriber](https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html).
 
 ## Requirements: 
-1. Clone this repository down to the right location in your ROS 2 workspace.
-2. Complete the [figure8_node.py](turtlesim_play_pkg/turtlesim_play_pkg/figure8_node.py).
+1. [Create a ROS workspace](https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html#create-a-new-directory). 
+2. Clone this repository down to the right location in your ROS workspace.
+3. Complete the [figure8_node.py](turtlesim_play_pkg/turtlesim_play_pkg/figure8_node.py).
+   Fill approriate expressions to the `None` values in the commented sections:
+   ```python
+   ### START CODING HERE ###correct author's info
 
+   ### END CODING HERE ###
+   ```
+   The turtle is expected to drive a figure 8 pattern.
+   The turtle is supposed to draw the top circle couterclockwisely with a radius of 1.
+   The turtle is supposed to draw the bottom circle clockwisely with a radius of 2.
+   The angular velocity of the turtle will be fixed to $$\frac{pi}{4}$$.
+   You need to determine the linear velocity and `/turtle1/cmd_vel` topic publish rate to limit the turtle's movement in the red rectangular boundaries.
+   An expected turtle trajectory figure is shown below.
+   
    ![example_fig8](turtlesim_play_pkg/images/example_fig8.png)
+4. Let the turtle complete at least five laps then upload your figure 8 to the [images/](turtlesim_play_pkg/images/) directory.
+5. (5%) Fill the `<description>`, `<maintainer>`, `<maintainer_email>` fields in the [package.xml](turtlesim_play_pkg/package.xml) and [setup.py](turtlesim_play_pkg/setup.py) with your own information.
 > Hint:
 > ```console
 > cd <ros workspace location>/src
