@@ -18,7 +18,7 @@ Clone this repository down to the right location in your ROS workspace.
    - The turtle is expected to drive a figure 8 pattern.
    - The turtle is supposed to draw the top circle couterclockwisely with a **radius of 1**.
    - The turtle is supposed to draw the bottom circle clockwisely with a **radius of 2**.
-   - The **angular velocity** of the turtle will be fixed to **$$\frac{\pi}{4}$$**.
+   - The **angular velocity** of the turtle will be fixed to **$$\pi / 4 $$ rad/s**.
    
    You need to determine the **linear velocity** and `/turtle1/cmd_vel` topic **publish rate** to limit the turtle's movement in the red rectangular boundaries.
    An expected turtle trajectory figure is shown below.
