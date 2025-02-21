@@ -6,8 +6,10 @@
 - Practice node execution with topic [publisher and subscriber](https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html).
 
 ## Requirements: 
-1. Create a ROS package with name `r2_pkg` using the CLI.
-1. (30%) Create a ROS executable associate to the Python script. Refer to this [tutorial](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Creating-Your-First-ROS2-Package.html). 
+1. Clone this repository down to the right location in your ROS 2 workspace.
+2. Complete the [figure8_node.py](turtlesim_play_pkg/turtlesim_play_pkg/figure8_node.py).
+
+   ![example_fig8](turtlesim_play_pkg/images/example_fig8.png)
 > Hint:
 > ```console
 > cd <ros workspace location>/src
