@@ -15,7 +15,7 @@ class Figure8Node(Node):
         self.set_red_cli = self.create_client(SetPen, "/turtle1/set_pen")
         while not self.set_red_cli.wait_for_service(timeout_sec=1.0):
             self.get_logger().info("set pen service not available, waiting again...")
-        self.set_red_req()
+        self.set_red_req(255, 2)
         # Draw rectangle boundary
         self.teleport_cli = self.create_client(
             TeleportAbsolute, "/turtle1/teleport_absolute"
@@ -24,18 +24,20 @@ class Figure8Node(Node):
             self.get_logger().info("teleport service not available, waiting again...")
         self.tp_req = TeleportAbsolute.Request()
         bounds = (
-            (6.544445, 5.544445),
-            (6.544445, 7.544445),
-            (4.544445, 7.544445),
-            (4.544445, 5.544445),
-            (7.544445, 5.544445),
-            (7.544445, 1.544445),
-            (3.544445, 1.544445),
-            (3.544445, 5.544445),
+            (6.544545, 5.544445),
+            (6.544545, 7.544545),
+            (4.544345, 7.544545),
+            (4.544345, 5.544445),
+            (7.544545, 5.544445),
+            (7.544545, 1.544345),
+            (3.544345, 1.544345),
+            (3.544345, 5.544445),
             (5.544445, 5.544445),
         )
         for b in bounds:
             self.request_for_teleport(b[0], b[1])
+        # Set pen color to black
+        self.set_red_req(0, 5)
 
         # Topic publisher and subscriber
         self.pose_listener = self.create_subscription(
@@ -48,11 +50,11 @@ class Figure8Node(Node):
         self.ang_z = pi / 4
         self.reverse_circle = False
 
-    def set_red_req(self):
+    def set_red_req(self, r, width):
         "Set pen color to red, width to 2"
         req = SetPen.Request()
-        req.r = 255
-        req.width = 2
+        req.r = r
+        req.width = width
         # Call the service
         future = self.set_red_cli.call_async(req)
         rclpy.spin_until_future_complete(self, future)
@@ -63,6 +65,7 @@ class Figure8Node(Node):
             self.get_logger().error("Failed to call service /turtle1/set_pen")
 
     def request_for_teleport(self, dest_x, dest_y):
+        "Teleport turtle to dest_x, dest_y"
         self.tp_req = TeleportAbsolute.Request()
         self.tp_req.x = dest_x
         self.tp_req.y = dest_y
@@ -80,7 +83,7 @@ class Figure8Node(Node):
 
     def cmd_pub(self):
         twist_msg = Twist()
-        if not (self.circle_counter + 1) % 160:
+        if not self.circle_counter % 160:
             self.reverse_circle = not self.reverse_circle
         if self.reverse_circle:
             twist_msg.linear.x = pi / 2
@@ -95,11 +98,8 @@ class Figure8Node(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-
     turtle8 = Figure8Node()
-
     rclpy.spin(turtle8)
-
     # Destroy the node explicitly
     # (optional - otherwise it will be done automatically
     # when the garbage collector destroys the node object)
