@@ -23,12 +23,18 @@ Clone this repository down to the right location in your ROS workspace.
    An expected turtle trajectory figure is shown below.
    
    ![example_fig8](turtlesim_play_pkg/images/example_fig8.png)
-3. Build your package and verify your node's functionality
-   1. Open up a terminal, start `turtlesim`
+3. Build your package and verify your node's functionality.
+   1. To build your package:
+   ```console
+   cd <ros workspace path>
+   colcon build
+   source install/local_setup.bash  # CRITICAL, or ROS can't find your package
+   ```   
+   2. Open up a terminal, start `turtlesim_node`
    ```console
    ros2 run turtlesim turtlesim_node
    ```
-   2. Open another terminal, start the `figure8_node`
+   3. Open another terminal, start the `figure8_node`
    ```console
    ros2 run turtlesim_play_pkg figure8_node
    ```
