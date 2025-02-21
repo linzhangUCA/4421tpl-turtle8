@@ -41,6 +41,8 @@ Clone this repository down to the right location in your ROS workspace.
 5. Let the turtle complete at least five laps then upload your figure 8 to the [images/](turtlesim_play_pkg/images/) directory.
 6. (5%) Fill the `<description>`, `<maintainer>`, `<maintainer_email>` fields with your own information in [package.xml](turtlesim_play_pkg/package.xml) and [setup.py](turtlesim_play_pkg/setup.py).
 
+## Study Resources
+![lin_ang_vel](https://yairshinar.com/wp-content/uploads/2018/12/c99655fa7435cc516bb40ac7daaa51c9.jpg)
 
 ## Troubleshooting:
 - Make sure your environment is correctly setup by following this [tutorial](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html)
