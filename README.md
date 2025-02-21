@@ -11,15 +11,16 @@ Clone this repository down to the right location in your ROS workspace.
 2. Complete the [figure8_node.py](turtlesim_play_pkg/turtlesim_play_pkg/figure8_node.py).
    Fill approriate expressions to the `None` values in the commented sections:
    ```python
-   ### START CODING HERE ###correct author's info
+   ### START CODING HERE ###
 
    ### END CODING HERE ###
    ```
-   The turtle is expected to drive a figure 8 pattern.
-   The turtle is supposed to draw the top circle couterclockwisely with a radius of 1.
-   The turtle is supposed to draw the bottom circle clockwisely with a radius of 2.
-   The angular velocity of the turtle will be fixed to $$\frac{\pi}{4}$$.
-   You need to determine the linear velocity and `/turtle1/cmd_vel` topic publish rate to limit the turtle's movement in the red rectangular boundaries.
+   - The turtle is expected to drive a figure 8 pattern.
+   - The turtle is supposed to draw the top circle couterclockwisely with a **radius of 1**.
+   - The turtle is supposed to draw the bottom circle clockwisely with a **radius of 2**.
+   - The **angular velocity** of the turtle will be fixed to **$$\frac{\pi}{4}$$**.
+   
+   You need to determine the **linear velocity** and `/turtle1/cmd_vel` topic **publish rate** to limit the turtle's movement in the red rectangular boundaries.
    An expected turtle trajectory figure is shown below.
    
    ![example_fig8](turtlesim_play_pkg/images/example_fig8.png)
@@ -42,6 +43,9 @@ Clone this repository down to the right location in your ROS workspace.
 6. (5%) Fill the `<description>`, `<maintainer>`, `<maintainer_email>` fields with your own information in [package.xml](turtlesim_play_pkg/package.xml) and [setup.py](turtlesim_play_pkg/setup.py).
 
 ## Study Resources
+Given an object is doing the circular motion in constant linear/angular velocity. 
+The relationship between the linear and angular velocity is shown as the following figure, where $$r$$ is the radius of the circle.
+
 ![lin_ang_vel](https://yairshinar.com/wp-content/uploads/2018/12/c99655fa7435cc516bb40ac7daaa51c9.jpg)
 
 ## Troubleshooting:
