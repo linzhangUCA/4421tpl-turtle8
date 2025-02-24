@@ -10,7 +10,7 @@
    1. [Create a ROS workspace](https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html#create-a-new-directory).
    2. Clone this repository down to the `/src` dirctory in your ROS workspace.
    3. Build `turtlesim_play_pkg` package.
-      **NOTE**: `you need to specify <ros workspace path>` according to the 1st step.
+      **NOTE**: you need to specify <ros workspace path>` according to the 1st step.
       Verify if your package was downloaded to the right location and was successfully built.
       1. Open a terminal window and run following commands:
       ```console
