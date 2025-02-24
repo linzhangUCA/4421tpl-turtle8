@@ -44,7 +44,7 @@
    
    You need to determine the **linear velocity** and `/turtle1/cmd_vel` topic **publish rate** to regulate the turtle's motion.
    
-   ![example_fig8](turtlesim_play_pkg/images/example_fig8.png)
+   ![example_fig8](turtlesim_play_pkg/images/example_fig8.gif)
 
 3. (10%) Let the turtle complete at least five laps then upload your figure 8 to the [images/](turtlesim_play_pkg/images/) directory.
    Illustrate Your turtle's execution below (edit next line in this [README](README.md)):
