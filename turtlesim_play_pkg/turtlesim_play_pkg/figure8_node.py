@@ -11,12 +11,12 @@ from math import pi
 class Figure8Node(Node):
     def __init__(self):
         super().__init__("turtle8")
-        # Set pen color
+        # Draw boundary
         self.set_red_cli = self.create_client(SetPen, "/turtle1/set_pen")
         while not self.set_red_cli.wait_for_service(timeout_sec=1.0):
             self.get_logger().info("set pen service not available, waiting again...")
         self.set_red_req(255, 2)
-        # Draw rectangle boundary
+
         self.teleport_cli = self.create_client(
             TeleportAbsolute, "/turtle1/teleport_absolute"
         )
@@ -36,7 +36,7 @@ class Figure8Node(Node):
         )
         for b in bounds:
             self.request_for_teleport(b[0], b[1])
-        # Set pen color to black
+
         self.set_red_req(0, 5)
 
         # Topic publisher and subscriber
@@ -48,8 +48,28 @@ class Figure8Node(Node):
         # Variables
         self.circle_counter = 0
         self.ang_z = pi / 4
-        self.reverse_circle = False
+        self.is_clockwise = True
 
+    def pin_turtle(self, pose_msg):
+        self.get_logger().info(f"Turtle's status: \n{pose_msg}")
+
+    ### START CODING HERE ###
+    def cmd_pub(self):
+        twist_msg = None
+        if self.circle_counter % None == 0:
+            self.is_clockwise = not self.is_clockwise
+        if self.is_clockwise == True:
+            twist_msg.linear.x = None
+            twist_msg.angular.z = None
+        else:
+            twist_msg.linear.x = None
+            twist_msg.angular.z = None
+        self.cmd_talker.publish(None)
+        self.circle_counter = None  # don't forget to increment counter
+        self.get_logger().debug(f"Velocity command: {twist_msg}")  # "debug" <-> "info"
+    ### END CODING HERE ###
+
+    # Service clients for drawing boundaries
     def set_red_req(self, r, width):
         "Set pen color to red, width to 2"
         req = SetPen.Request()
@@ -78,32 +98,11 @@ class Figure8Node(Node):
         else:
             self.get_logger().error("Failed to call service /turtle1/teleport_absolute")
 
-    def pin_turtle(self, pose_msg):
-        self.get_logger().info(f"Turtle's status: \n{pose_msg}")
-
-    def cmd_pub(self):
-        twist_msg = Twist()
-        ### START CODING HERE ###
-        if self.circle_counter % None == 0:
-            self.reverse_circle = not self.reverse_circle
-        if self.reverse_circle == True:
-            twist_msg.linear.x = pi / 2
-            twist_msg.angular.z = -self.ang_z
-        else:
-            twist_msg.linear.x = pi / 4
-            twist_msg.angular.z = self.ang_z
-        self.cmd_talker.publish(twist_msg)
-        self.get_logger().debug(f"Velocity command: {twist_msg}")
-        self.circle_counter += 1
-        ### END CODING HERE ###
 
 def main(args=None):
     rclpy.init(args=args)
     turtle8 = Figure8Node()
     rclpy.spin(turtle8)
-    # Destroy the node explicitly
-    # (optional - otherwise it will be done automatically
-    # when the garbage collector destroys the node object)
     turtle8.destroy_node()
     rclpy.shutdown()
 
