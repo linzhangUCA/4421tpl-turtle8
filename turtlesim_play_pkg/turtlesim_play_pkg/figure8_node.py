@@ -83,9 +83,10 @@ class Figure8Node(Node):
 
     def cmd_pub(self):
         twist_msg = Twist()
-        if not self.circle_counter % 160:
+        ### START CODING HERE ###
+        if self.circle_counter % None == 0:
             self.reverse_circle = not self.reverse_circle
-        if self.reverse_circle:
+        if self.reverse_circle == True:
             twist_msg.linear.x = pi / 2
             twist_msg.angular.z = -self.ang_z
         else:
@@ -94,7 +95,7 @@ class Figure8Node(Node):
         self.cmd_talker.publish(twist_msg)
         self.get_logger().debug(f"Velocity command: {twist_msg}")
         self.circle_counter += 1
-
+        ### END CODING HERE ###
 
 def main(args=None):
     rclpy.init(args=args)
