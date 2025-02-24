@@ -52,6 +52,7 @@
    ![fig8_practice](turtlesim_play_pkg/images/fig8_practice.png)
    
 5. (5%) Fill the `<description>`, `<maintainer>`, `<maintainer_email>` fields with your own information in [package.xml](turtlesim_play_pkg/package.xml) and [setup.py](turtlesim_play_pkg/setup.py).
+Look for the fields marked with `TODO` in these files.
 
 ## Study Resources
 

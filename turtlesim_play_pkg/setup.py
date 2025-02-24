@@ -13,10 +13,10 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='pbd0',
-    maintainer_email='lzhang12@uca.edu',
+    maintainer='TODO: author name',
+    maintainer_email='TODO: email address',
     description='TODO: Package description',
-    license='TODO: License declaration',
+    license='GNU General Public License v3.0',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
