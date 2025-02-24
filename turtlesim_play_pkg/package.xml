@@ -4,7 +4,7 @@
   <name>turtlesim_play_pkg</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="TODO: email address">TODO: author name</maintainer>
+  <maintainer email="todo@todo.todo">TODO: author name</maintainer>
   <license>GNU General Public License v3.0</license>
 
   <test_depend>ament_copyright</test_depend>
