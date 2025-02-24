@@ -56,8 +56,9 @@ class Figure8Node(Node):
     ### START CODING HERE ###
     def cmd_pub(self):
         twist_msg = None
-        if self.circle_counter % None == 0:
+        if self.circle_counter % None == 0:  # determine when to change augular vel direction
             self.is_clockwise = not self.is_clockwise
+            
         if self.is_clockwise == True:
             twist_msg.linear.x = None
             twist_msg.angular.z = None
@@ -66,6 +67,7 @@ class Figure8Node(Node):
             twist_msg.angular.z = None
         self.cmd_talker.publish(None)
         self.circle_counter = None  # don't forget to increment counter
+        
         self.get_logger().debug(f"Velocity command: {twist_msg}")  # "debug" <-> "info"
     ### END CODING HERE ###
 
